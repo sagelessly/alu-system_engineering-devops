@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>404 - Ceci n'est pas une page</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0; min-height: 100vh; display: grid; place-items: center;
+      background: radial-gradient(circle at 30% 20%, #3b2f63, #14112b 70%);
+      color: #f4efe6; font-family: Georgia, "Times New Roman", serif; text-align: center;
+    }
+    main { padding: 24px; max-width: 560px; }
+    .code { font-size: 7rem; margin: 0; letter-spacing: .1em; color: #ffcf6b; text-shadow: 0 0 24px #ffcf6b66; }
+    .pipe { font-size: 1.4rem; font-style: italic; margin: 8px 0 24px; }
+    .frame { margin: 0 auto 28px; width: 220px; height: 140px; border: 6px solid #ffcf6b; border-radius: 8px;
+      display: grid; place-items: center; animation: float 4s ease-in-out infinite; }
+    .frame span { font-size: 4rem; }
+    p { line-height: 1.6; opacity: .85; }
+    a { display: inline-block; margin-top: 12px; padding: 10px 22px; border-radius: 999px;
+      background: #ffcf6b; color: #14112b; text-decoration: none; font-weight: bold; }
+    a:hover { background: #fff; }
+    @keyframes float { 50% { transform: translateY(-12px) rotate(-2deg); } }
+  </style>
+</head>
+<body>
+  <main>
+    <h1 class="code">404</h1>
+    <div class="frame"><span>&#128161;</span></div>
+    <p class="pipe">Ceci n'est pas une page</p>
+    <p>The page you were looking for does not exist, but the idea of it does. Let's get you back to something real.</p>
+    <a href="/">Back to the home page</a>
+  </main>
+</body>
+</html>
