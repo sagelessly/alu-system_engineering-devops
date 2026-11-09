@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# Installs and configures HAProxy on lb-01 to round-robin traffic between web-01 and web-02
+sudo apt-get update -y
+sudo apt-get install -y haproxy
+if ! grep -q "http_back" /etc/haproxy/haproxy.cfg; then
+sudo tee -a /etc/haproxy/haproxy.cfg > /dev/null <<'CONF'
+
+frontend http_front
+    bind *:80
+    mode http
+    default_backend http_back
+
+backend http_back
+    mode http
+    balance roundrobin
+    server 7398-web-01 18.175.236.234:80 check
+    server 7398-web-02 18.171.209.37:80 check
+CONF
+fi
+sudo sed -i 's/^ENABLED=.*/ENABLED=1/' /etc/default/haproxy
+sudo service haproxy restart
